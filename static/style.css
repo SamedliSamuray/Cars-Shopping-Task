@@ -1,0 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    scroll-behavior: smooth;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: whitesmoke;
+}
+.navbar{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    position: sticky;
+    z-index: 1;
+    background-color: darkblue;
+    top: 0px;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding: 5px;
+}
+
+.navbar h1,a{
+    color:red;
+    font-style: italic;
+    border-bottom: 3px solid red;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.container{
+    background-color: white;
+    width: 500px;
+    border-radius: 5px;
+    border: 1px solid black;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+    height: 100%;
+    min-height: 700px;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+.blogs{
+    text-align: center;
+    height: 220px;
+    width: 330px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+}
+form ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.container select{
+    width: 80px;
+    margin-top: 20px;
+    height: 40px;
+}
+.container button{
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}

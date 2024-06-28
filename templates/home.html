@@ -1,0 +1,63 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+    <title>Cars Shopping</title>
+</head>
+<body>
+    <div class="navbar">
+        <h1>Cars Shopping</h1>
+        <a href="{% url 'gallery'%}"><h1>Galleries</h1></a>
+    </div>
+    <div class="container"> 
+        <form action=""  method="get">
+            {% csrf_token %}
+            <select name="selected_class" id="selected_class">
+                <option value="owner">Owner</option>
+                <option value="car">Car</option>
+                <option value="gallery">Gallery</option>
+                <option value="all">All</option>
+            </select>
+            <button type="submit">Search</button>
+        </form>
+        
+        
+        <ul class="blogs">
+            {%if owner %}
+                <li><b>Owners</b> </li>
+                <hr>
+                {% for own in owner %}
+                    <li>{{own.name}}</li>
+                {% endfor %}
+            {% elif car %}
+            <li><b>Brands</b> | <b>Model</b> </li>
+                <hr>
+                {% for c in car %}
+                <li> {{c.brand}} | {{c.model}}</li>
+                {% endfor %}
+            {% elif all and not values %}
+            <li><b>Owners</b>|<b>Galleries</b>|<b>Brands</b>|<b>Models</b> </li>
+            <hr>
+                {% for a in all %}
+                <li>{{a.owner}} | {{a.gallery}} | {{a.brand}} | {{a.model}}</li>
+                <hr>
+            {% endfor %}  
+            {% elif gallery %}
+            <li><b>Galleries</b></li>
+            <hr>
+                {% for g in gallery%}
+                    <li>{{g.gallery}}</li>
+                    
+                {% endfor %}
+            {%endif %}
+        </ul>  
+    
+    </div>
+    <script src="static 'main.js' "></script>
+</body>
+</html>
+
+                
